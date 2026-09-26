@@ -1,0 +1,6 @@
+{
+  "name": "ArthSetu AI",
+  "description": "AI-Driven Government Scheme Matching & Financial Guidance for Marginalized Entrepreneurs (SIH26092)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

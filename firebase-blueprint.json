@@ -1,0 +1,176 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User account and entrepreneur business profile linked to user email",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID"
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address"
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Legal name of citizen"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Contact telephone number"
+        },
+        "age": {
+          "type": "number",
+          "description": "Applicant age"
+        },
+        "gender": {
+          "type": "string",
+          "description": "Gender identity"
+        },
+        "socialCategory": {
+          "type": "string",
+          "description": "Social demographic category (SC, ST, OBC, General, etc.)"
+        },
+        "isDivyangjan": {
+          "type": "boolean",
+          "description": "Person with disability status"
+        },
+        "businessStage": {
+          "type": "string",
+          "description": "New startup or existing expansion"
+        },
+        "businessType": {
+          "type": "string",
+          "description": "Enterprise classification"
+        },
+        "tradeOrActivity": {
+          "type": "string",
+          "description": "Specific trade or artisan vocation"
+        },
+        "businessDescription": {
+          "type": "string",
+          "description": "Brief description of business and machinery"
+        },
+        "requiredLoanAmount": {
+          "type": "number",
+          "description": "Requested assistance in INR"
+        },
+        "ownContribution": {
+          "type": "number",
+          "description": "Promoter equity contribution in INR"
+        },
+        "annualHouseholdIncome": {
+          "type": "number",
+          "description": "Annual household income in INR"
+        },
+        "state": {
+          "type": "string",
+          "description": "State of operation"
+        },
+        "district": {
+          "type": "string",
+          "description": "District of enterprise location"
+        },
+        "locationType": {
+          "type": "string",
+          "description": "Rural or Urban location"
+        },
+        "pincode": {
+          "type": "string",
+          "description": "6-digit postal code"
+        },
+        "hasUdyamRegistration": {
+          "type": "boolean",
+          "description": "Whether Udyam registration is held"
+        },
+        "hasPriorTraining": {
+          "type": "boolean",
+          "description": "EDP or skill certification status"
+        },
+        "isShgMember": {
+          "type": "boolean",
+          "description": "Member of Self Help Group"
+        },
+        "isBPLOrLowIncome": {
+          "type": "boolean",
+          "description": "BPL or low-income ration holder"
+        },
+        "hasExistingBankLoan": {
+          "type": "boolean",
+          "description": "Existing bank liability status"
+        },
+        "hasCollateral": {
+          "type": "boolean",
+          "description": "Collateral security availability"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of last update"
+        }
+      },
+      "required": [
+        "userId",
+        "email",
+        "fullName"
+      ]
+    },
+    "SchemeApplication": {
+      "title": "SchemeApplication",
+      "description": "User saved application and customized scheme draft",
+      "type": "object",
+      "properties": {
+        "applicationId": {
+          "type": "string",
+          "description": "Unique application ID"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Owner user ID"
+        },
+        "schemeId": {
+          "type": "string",
+          "description": "Government scheme ID"
+        },
+        "schemeName": {
+          "type": "string",
+          "description": "Official title of scheme"
+        },
+        "status": {
+          "type": "string",
+          "description": "Draft, In Review, Ready to Submit"
+        },
+        "appliedAmount": {
+          "type": "number",
+          "description": "Assistance sought for this scheme"
+        },
+        "notes": {
+          "type": "string",
+          "description": "User personal application notes"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of last update"
+        }
+      },
+      "required": [
+        "applicationId",
+        "userId",
+        "schemeId",
+        "schemeName",
+        "status"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Private entrepreneur profile linked to authenticated email and userId"
+    },
+    "/users/{userId}/applications/{applicationId}": {
+      "schema": "SchemeApplication",
+      "description": "Per-user scheme applications and saved progress"
+    }
+  }
+}
